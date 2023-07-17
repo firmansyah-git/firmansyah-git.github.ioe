@@ -1,0 +1,275 @@
+/* Import font dari google */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+/* variabel */
+:root {
+    --font-size: 16px;
+  --primary-color: #6cd1e1;
+  --body-color: #e6e5e1;
+  --title-color: #1b75bc;
+  --dark-color: #000; /* hitam */
+  --header-height: 5.5rem; 
+  --button-height: 3rem;
+  --logo-width: 6rem;  /* lebar logo */
+  --title-font-size: 3rem; /* ukuran judul 3 x font-size */
+  --subtitle-font-weight: 300; 
+  --paragraph-font-size: 1.2rem; /* ukuran paragraph 1.2 x font-size */
+}
+
+/* css reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: var(--font-size);
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: "Lato", sans-serif;
+}
+
+body {
+  background-color: var(--body-color);
+  position: relative;
+  max-width: 1024px;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+button {
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* reusable css */
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.title {
+    color: var(--title-color);
+    font-size: var(--title-font-size);
+  }
+  
+.subtitle {
+    font-weight: var(--subtitle-font-weight);
+}
+
+  .paragraph {
+    font-size: var(--paragraph-font-size);
+  }
+
+
+/* Blob SVG */
+.blob-xl {
+    z-index: -10;
+    position: fixed;
+    overflow: hidden;
+}
+
+/* Bagian header */
+.header {
+  height: var(--header-height);
+  background-color: rgba(230, 229, 225, 0.2);
+  backdrop-filter: blur(20px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.img-logo {
+  width: var(--logo-width);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+    width: 100%;
+    height: 100%;
+    padding: 0.3rem 0;
+    position: relative;
+}
+
+
+.nav-link:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1rem;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+/* input pencarian */
+.search-wrapper {
+    border: 1px solid var(--dark-color);
+    border-radius: 1rem;
+    padding: 0.3rem .5rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.search {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+
+/* Bagian main */
+.section {
+  min-height: calc(100vh - var(--header-height));
+    display: flex;
+    align-items: center;
+}
+
+.content-section, .img-section{
+  width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.img-section {
+    position:relative;
+}
+
+.svg-ig, .svg-yt, .svg-web {
+    position: absolute;
+}
+
+.svg-ig {
+    right: 0;
+    top: 3%;
+}
+
+.svg-yt {
+    left: 5%;
+    top: 55%;
+}
+
+.svg-web {
+    right: 10%;
+    top: 70%;
+
+}
+
+
+.img-container {
+    margin: auto;
+    border-radius: 50%;
+    width: 25rem;
+    height: 25rem;
+    overflow: hidden;
+}
+
+.img-program{
+    width: 15rem;
+    height: 15rem;
+}
+
+.img-container  .main-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-container {
+  padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn {
+  background-color: var(--primary-color);
+  border-radius: 2rem;
+  height: var(--button-height);
+}
+
+.btn-play {
+    background-color: transparent;
+}
+
+.play-video{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e48257;
+    width: var(--button-height);
+    height: var(--button-height);
+    border-radius: 50%;
+}
+
+.btn a {
+  padding: 0 1.8rem;
+}
+
+.btn-play a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+/* bagian program */
+.main-program .mobile-frame {
+    background-color: white;
+    border: 3px solid var(--primary-color);
+    border-radius: 30px;
+    padding: 1rem 0.5rem;
+    width: 70%;
+}
+
+.mobile-frame .mobile-screen {
+    border: 3px solid var(--body-color);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+}
