@@ -87,6 +87,10 @@ button {
     gap: 1rem;
 }
 
+.container {
+  padding-top: 3rem;
+}
+
 .nav-container {
   /* position: relative; */
 }
@@ -110,7 +114,7 @@ button {
   height: var(--header-height);
   background-color: var(--body-color);
   width: 100%;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 99;
   transition: all .3s ease;
@@ -218,16 +222,16 @@ button {
 /* Bagian main */
 
 /* home */
-.section {
-  height: calc(100vh - var(--header-height));
+main {
+  position: relative;
 }
 
-.section:nth-child(n + 2):not(:last-child){
-  padding-top: var(--header-height);
+.section:not(:last-child){
+  padding: var(--header-height) 0;
 }
 
 .section:last-child {
-  padding: var(--header-height) 0;
+  /* padding: var(--header-height) 0; */
 }
 
 .content-section, .img-section{
@@ -276,9 +280,19 @@ button {
   position: absolute;
 }
 
+.cursor-svg {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 55%;
+  right: 0;
+  animation: float 3s infinite;
+}
+
 .svg-ig, .svg-yt, .svg-web {
     width: 50px;
     height: 50px;
+    animation: float 3s infinite;
 }
 
 .svg-search {
@@ -317,6 +331,17 @@ button {
 
 }
 
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 /* about */
 
 .video-container iframe{
@@ -354,6 +379,7 @@ button {
   background-color: var(--primary-color);
   border-radius: var(--button-radius);
   height: var(--button-height);
+  position: relative;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   transition: background-color .3s ease;
 }
@@ -474,6 +500,11 @@ button {
     top: 25%;
   }
 
+  .blob-md {
+    top: -60%;
+    right: -10%;
+  }
+
   .svg-arrow-yt {
     display: none;
   }
@@ -546,6 +577,7 @@ button {
   .program-section {
     align-items: center;
   }
+  
 
 }
 
