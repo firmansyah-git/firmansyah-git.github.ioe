@@ -114,7 +114,7 @@ button {
   height: var(--header-height);
   background-color: var(--body-color);
   width: 100%;
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 99;
   transition: all .3s ease;
