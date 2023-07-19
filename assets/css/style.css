@@ -224,6 +224,7 @@ button {
 /* home */
 main {
   position: relative;
+  width: 100%;
 }
 
 .section:not(:last-child){
