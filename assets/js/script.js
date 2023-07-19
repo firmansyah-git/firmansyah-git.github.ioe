@@ -15,22 +15,48 @@ burger.addEventListener('click', () => {
 
 
 
-const navLinks = document.querySelectorAll('.nav-link');
+function handleKeyDown(event, inputId) {
+    if (event.keyCode === 13) { // 13 adalah kode untuk tombol "Enter"
+      event.preventDefault(); // Mencegah aksi default dari tombol "Enter" (misalnya submit form)
+      searchParagraph(inputId);
+    }
+  }
+  
+  function searchParagraph(inputId) {
+    console.log(inputId);
+    var input = document.getElementById(inputId).value.toLowerCase();
+    var paragraphs = document.getElementsByTagName("p");
+    var titles = document.getElementsByTagName("h1");
+    var foundParagraph = false;
+    var foundTitles = false;
 
-navLinks.forEach(function(navLink) {
-    navLink.addEventListener('mouseover', function(){
-        navLinks.forEach(function(link) {
-            link.classList.remove('nav-active');
-        });
-    })
+    for (var i = 0; i < titles.length; i++) {
+      var titlesText = titles[i].innerText.toLowerCase();
+  
+      if (titlesText.includes(input)) {
+        titles[i].scrollIntoView({ behavior: "smooth", block: "center" });
+        foundParagraph = true;
+      } 
+    }
 
-    navLink.addEventListener('click', function() {
-        navLinks.forEach(function(link) {
-        link.classList.remove('nav-active');
-        });
+    for (var i = 0; i < paragraphs.length; i++) {
+      var paragraphText = paragraphs[i].innerText.toLowerCase();
+  
+      if (paragraphText.includes(input)) {
+        paragraphs[i].scrollIntoView({ behavior: "smooth", block: "center" });
+        foundParagraph = true;
+      } 
+    }
+  
+    if (!foundParagraph && !foundTitles) {
+      alert("Paragraf tidak ditemukan");
+    }
+  }
+  
+  function openInstagramPopup() {
+    window.open("https://www.instagram.com/kampusmerdeka.ri/", "Instagram Pop-up", "width=500,height=500");
+  }
 
-    // Tambahkan kelas "active" ke elemen navigasi yang diklik
-    this.classList.add('nav-active');
-    });
-});
-
+  function openYoutubePopup() {
+    window.open("https://www.youtube.com/@kampus.merdeka", "Youtube Pop-up", "width=500,height=500");
+  }
