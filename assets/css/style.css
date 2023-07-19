@@ -227,12 +227,12 @@ main {
   width: 100%;
 }
 
-.section:not(:last-child){
-  padding: var(--header-height) 0;
+.section {
+  width: 100%;
 }
 
-.section:last-child {
-  /* padding: var(--header-height) 0; */
+.section:not(:last-child){
+  padding: var(--header-height) 0;
 }
 
 .content-section, .img-section{
