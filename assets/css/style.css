@@ -452,6 +452,9 @@ main {
 }
 
 @media (max-width: 575.98px) { 
+  body {
+    overflow-x: hidden;
+  }
   .blob-md {
     right: 0; 
   }
