@@ -66,7 +66,7 @@ button {
 .blob-xl {
   right: 2%;
   top: 15%;
-  transform: translateX(50%) scale(140%);
+  transform: translateX(50%) scale(140%) !important;
 }
 
 .blob-md {
@@ -232,7 +232,7 @@ main {
   width: 100%;
 }
 
-.section:not(:last-child){
+.section{
   padding: var(--header-height) 0;
 }
 
