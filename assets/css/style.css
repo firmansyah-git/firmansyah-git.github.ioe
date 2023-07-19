@@ -35,7 +35,6 @@
 html {
     scroll-behavior: smooth;
     font-family: "Lato", sans-serif;
-    width: fit-content;
 }
 
 body {
@@ -115,7 +114,7 @@ button {
   height: var(--header-height);
   background-color: var(--body-color);
   width: 100%;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 99;
   transition: all .3s ease;
