@@ -278,6 +278,10 @@ main {
 
 
 /* SVG */
+.btn-play {
+  animation: float 3s infinite;
+}
+
 .svg {
   position: absolute;
 }
@@ -295,6 +299,7 @@ main {
     width: 50px;
     height: 50px;
     animation: float 3s infinite;
+    cursor: pointer;
 }
 
 .svg-search {
@@ -311,7 +316,6 @@ main {
 .svg-ig {
     right: 7%;
     top: 20%;
-    cursor: pointer;
 }
 
 .svg-arrow-yt {
@@ -324,7 +328,6 @@ main {
 .svg-yt {
     left: 3%;
     top: 55%;
-    cursor: pointer;
 }
 
 .svg-web {

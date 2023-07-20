@@ -60,3 +60,11 @@ function handleKeyDown(event, inputId) {
   function openYoutubePopup() {
     window.open("https://www.youtube.com/@kampus.merdeka", "Youtube Pop-up", "width=500,height=500");
   }
+
+  function openWebPopup() {
+    window.open("https://kampusmerdeka.kemdikbud.go.id/", "Youtube Pop-up", "width=500,height=500");
+  }
+
+  function openYoutubeProgramUnggulanPopup() {
+    window.open("https://www.youtube.com/watch?v=mtuardJqJBk", "Youtube Pop-up", "width=500,height=500");
+  }
