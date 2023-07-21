@@ -4,22 +4,44 @@
 /* variabel */
 :root {
   --font-size: 16px;
+
   --primary-color: #6cd1e1;
   --body-color: #e6e5e1;
+  --header-color: var(--body-color);
   --title-color: #1b75bc;
+  --font-color: #000; /* hitam */
   --dark-color: #000; /* hitam */
 
   --header-height: 5.5rem; 
+  --gap-navbar: 2rem; /* Mengatur lebar jarak masing-masing link navbar */
+  --gap-content: 1rem; /* jarak masing-masing content */
 
+  --logo-width: 6rem;  /* lebar logo */
+
+  /* button */
   --button-height: 3rem;
-  --button-weight: 2.4rem;
+  --button-weight: 2.4rem; 
   --button-radius: 2rem;
   --button-hover: #51baca;
 
-  --logo-width: 6rem;  /* lebar logo */
+  --search-radius: 1rem;
+
+  /* Typograph  */
   --title-font-size: 3rem; /* ukuran judul 3 x font-size */
   --subtitle-font-weight: 400; 
   --paragraph-font-size: 1.2rem; /* ukuran paragraph 1.2 x font-size */
+
+  --width-container : 1024px; /* Lebar Container */
+  --width-img-container: 25rem; /* Lebar foto content */
+  --width-img-program-container: 12rem ;/* Lebar foto content */
+  --radius-img: 50% ;/* Radius(lengkung)  foto */
+
+  /* video */
+  --width-video: 30rem;
+  --height-video: 20rem;
+
+  /* Mobile */
+  --radius-mobile-frame: 30px; 
 
   --box-shadow: 0 1px 16px rgba(28, 61, 95, 0.1); /* Mengatur bayangan*/
 }
@@ -46,7 +68,7 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--dark-color);
+  color: var(--font-color);
   display: block;
 }
 
@@ -58,26 +80,9 @@ button {
     justify-content: center;
 }
 
-.blob-svg {
-  position: fixed;
-  z-index: -99;
-}
-
-.blob-xl {
-  right: 2%;
-  top: 15%;
-  transform: translateX(50%) scale(140%) !important;
-}
-
-.blob-md {
-  right: 60%; 
-  top: -75%;
-  transform: scale(50%) rotate(-10deg);
-}
-
 /* reusable css */
 .container, .nav-container, .contact-container {
-    max-width: 1024px;
+    max-width: var(--width-container);
     margin: auto;
     width: 100%;
     height: 100%;
@@ -92,10 +97,6 @@ button {
   padding-top: 3rem;
 }
 
-.nav-container {
-  /* position: relative; */
-}
-
 .title {
     color: var(--title-color);
     font-size: var(--title-font-size);
@@ -107,13 +108,14 @@ button {
 
 .paragraph {
   font-size: var(--paragraph-font-size);
+  color: var(--font-color);
 }
 
 
 /* Bagian header */
 .header {
   height: var(--header-height);
-  background-color: var(--body-color);
+  background-color: var(--header-color);
   width: 100%;
   position: fixed;
   top: 0;
@@ -134,11 +136,10 @@ button {
   width: var(--logo-width);
 }
 
-
 .navbar {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: var(--gap-navbar);
 }
 
 .burger {
@@ -178,7 +179,7 @@ button {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: var(--gap-navbar);
 }
 
 .nav-link {
@@ -202,7 +203,7 @@ button {
 /* input pencarian */
 .search-wrapper {
     border: 1px solid var(--dark-color);
-    border-radius: 1rem;
+    border-radius: var(--search-radius);
     padding: 0.3rem .5rem;
     display: flex;
     align-items: center;
@@ -220,19 +221,17 @@ button {
     overflow: hidden;
 }
 
-/* Bagian main */
 
+
+/* Bagian main */
 /* home */
 main {
   position: relative;
   width: 100%;
 }
 
-.section {
-  width: 100%;
-}
-
 .section{
+  width: 100%;
   padding: var(--header-height) 0;
 }
 
@@ -242,7 +241,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1rem;
+    gap: var(--gap-content);
 }
 
 .img-contact-section {
@@ -255,20 +254,19 @@ main {
 
 .img-container {
   margin: auto;
-  border-radius: 50%;
-  width: 25rem;
-  height: 25rem;
+  border-radius: var(--radius-img);
+  width: var(--width-img-container);
+  height: var(--width-img-container);
   overflow: hidden;
 }
 
 .img-program-container {
   margin: auto;
-  border-radius: 50%;
-  width: 12rem;
-  height: 12rem;
+  border-radius: var(--radius-img);
+  width: var(--width-img-program-container);
+  height: var(--width-img-program-container);
   overflow: hidden;
 }
-
 
 .main-img{
   width: 100%;
@@ -278,6 +276,23 @@ main {
 
 
 /* SVG */
+.blob-svg {
+  position: fixed;
+  z-index: -99;
+}
+
+.blob-xl {
+  right: 2%;
+  top: 15%;
+  transform: translateX(50%) scale(140%) !important;
+}
+
+.blob-md {
+  right: 60%; 
+  top: -75%;
+  transform: scale(50%) rotate(-10deg);
+}
+
 .btn-play {
   animation: float 3s infinite;
 }
@@ -347,17 +362,12 @@ main {
     transform: translateY(0);
   }
 }
+
 /* about */
-
 .video-container iframe{
-  width: 30rem;
-  height: 20rem;
+  width: var(--width-video);
+  height: var(--height-video);
 }
-
-/* program */
-
-
-
 
 /* Contact */
 .contact-section {
@@ -372,7 +382,7 @@ main {
 }
 
 
-
+/* Button */
 .btn-container {
   padding-top: 1rem;
     display: flex;
@@ -422,30 +432,22 @@ main {
 .main-program .mobile-frame {
     background-color: white;
     border: 3px solid var(--primary-color);
-    border-radius: 30px;
-    padding: 1rem 0.5rem;
+    border-radius: var(--radius-mobile-frame);
+    padding: 1rem 0.7rem;
     width: 20rem;
-    /* height: 100%; */
 }
 
 .mobile-frame .mobile-screen {
     border: 3px solid var(--body-color);
-    border-radius: 15px;
+    border-radius: calc(var(--radius-mobile-frame) / 2);
     padding: 1rem;
     text-align: center;
-    /* height: 100%; */
 }
 
 .swiper {
     width: 100%;
-    /* height: 100%; */
     padding: 1rem 0;
 }
-
-.swiper-wrapper {
-  /* height: 100%; */
-}
-
 
 .swiper-content {
     display: flex;
@@ -460,13 +462,15 @@ main {
   body {
     overflow-x: hidden;
   }
-  .blob-md {
-    right: 0; 
-  }
+
   .title {
     font-size: 2.5rem;
   }
 
+  .blob-md {
+    right: 0; 
+  }
+  
   .img-program-container{
     width: 15rem;
     height: 15rem;
@@ -484,7 +488,6 @@ main {
   .content-section, .img-section {
     width: 100%;
   }
-
 
   .container {
     display: flex;
